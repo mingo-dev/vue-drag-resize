@@ -432,7 +432,6 @@ export default {
                 case 'r':
                     if (this.stickAxis === 'y') {
                         this.stickAxis = 'xy';
-                        this.$emit('onAspectRatioChanged', true);
                     } else {
                         this.stickAxis = 'x';
                     }
@@ -440,7 +439,6 @@ export default {
                 case 'l':
                     if (this.stickAxis === 'y') {
                         this.stickAxis = 'xy';
-                        this.$emit('onAspectRatioChanged', true);
                     } else {
                         this.stickAxis = 'x';
                     }
