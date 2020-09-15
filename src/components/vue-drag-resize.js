@@ -407,6 +407,7 @@ export default {
         },
 
         stickDown: function (stick, index, ev) {
+            console.log('stickDown start')
             if (!this.isResizable || !this.active) {
                 return
             }
@@ -432,6 +433,7 @@ export default {
                 case 'r':
                     if (this.stickAxis === 'y') {
                         this.stickAxis = 'xy';
+                        this.$emit('onAspectRatioChanged', true);
                     } else {
                         this.stickAxis = 'x';
                     }
@@ -439,6 +441,7 @@ export default {
                 case 'l':
                     if (this.stickAxis === 'y') {
                         this.stickAxis = 'xy';
+                        this.$emit('onAspectRatioChanged', true);
                     } else {
                         this.stickAxis = 'x';
                     }
