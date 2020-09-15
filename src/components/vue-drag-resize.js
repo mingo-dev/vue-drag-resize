@@ -408,6 +408,8 @@ export default {
 
         stickDown: function (stick, index, ev) {
             console.log('stickDown start')
+            console.log('isResizable: ' + this.isResizable)
+            console.log('active: ' + this.active)
             if (!this.isResizable || !this.active) {
                 return
             }
@@ -421,6 +423,7 @@ export default {
             this.stickStartPos.bottom = this.bottom;
             this.currentStick = stick.split('');
             this.stickAxis = null;
+            console.log('this.currentStick[0]: ' + this.currentStick[0])
             switch (this.currentStick[0]) {
                 case 'b':
                     this.stickAxis = 'y';
@@ -429,6 +432,7 @@ export default {
                     this.stickAxis = 'y';
                     break;
             }
+            console.log('this.currentStick[1]: ' + this.currentStick[1])
             switch (this.currentStick[1]) {
                 case 'r':
                     if (this.stickAxis === 'y') {
