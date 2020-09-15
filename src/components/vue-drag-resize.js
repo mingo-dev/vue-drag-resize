@@ -432,6 +432,7 @@ export default {
                 case 'r':
                     if (this.stickAxis === 'y') {
                         this.stickAxis = 'xy';
+                        console.log('new')
                     } else {
                         this.stickAxis = 'x';
                     }
@@ -439,6 +440,7 @@ export default {
                 case 'l':
                     if (this.stickAxis === 'y') {
                         this.stickAxis = 'xy';
+                        console.log('new')
                     } else {
                         this.stickAxis = 'x';
                     }
