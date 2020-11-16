@@ -423,26 +423,32 @@ export default {
             this.stickAxis = null;
             switch (this.currentStick[0]) {
                 case 'b':
+                    console.log(1)
                     this.stickAxis = 'y';
                     break;
                 case 't':
+                    console.log(2)
                     this.stickAxis = 'y';
                     break;
             }
             switch (this.currentStick[1]) {
                 case 'r':
                     if (this.stickAxis === 'y') {
+                        console.log(3)
                         this.stickAxis = 'xy';
                         this.$emit('onAspectRatioChanged', true);
                     } else {
+                        console.log(4)
                         this.stickAxis = 'x';
                     }
                     break;
                 case 'l':
                     if (this.stickAxis === 'y') {
+                        console.log(5)
                         this.stickAxis = 'xy';
                         this.$emit('onAspectRatioChanged', true);
                     } else {
+                        console.log(6)
                         this.stickAxis = 'x';
                     }
                     break;
