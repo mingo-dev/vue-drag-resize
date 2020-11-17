@@ -429,6 +429,24 @@ export default {
                     this.stickAxis = 'y';
                     break;
             }
+            switch (this.currentStick[1]) {
+                case 'r':
+                    if (this.stickAxis === 'y') {
+                        this.stickAxis = 'xy';
+                        this.$emit('onAspectRatioChanged', true);
+                    } else {
+                        this.stickAxis = 'x';
+                    }
+                    break;
+                case 'l':
+                    if (this.stickAxis === 'y') {
+                        this.stickAxis = 'xy';
+                        this.$emit('onAspectRatioChanged', true);
+                    } else {
+                        this.stickAxis = 'x';
+                    }
+                    break;
+            }
             this.childElement = ev.target.parentElement.children;
             this.limits = this.calcResizeLimitation();
         },
@@ -558,7 +576,9 @@ export default {
             }
 
             this.$emit('resizing', this.rect);
-            this.childElement[0].children[0].style.fontSize = (this.h - 12) + 'px'
+            if ((this.currentStick[0] ==='b' || this.currentStick[0] === 't') && (this.currentStick[1] === 'r' || this.currentStick[1] === 'l')) {
+                this.childElement[0].children[0].style.fontSize = (this.h - 12) + 'px'
+            }
         },
 
         stickUp() {
